@@ -1,0 +1,280 @@
+/* ===== Ajit Sir's Physics Tutorials — Final Mobile-Optimized Dynamic Style ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+/* ===== Base ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fc;
+  color: #222;
+  text-align: center;
+  line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #f8fc03; /* changed from gradient to pure white */
+  color: #1e3a8a; /* dark navy for text */
+  padding: 12px 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 2px solid #e0e7ff; /* soft line for clean separation */
+}
+
+header img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));
+  border-radius: 8px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2em;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(90deg, #1e3a8a, #2563eb); /* subtle blue text gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.8px;
+  text-shadow: none;
+}
+
+/* ===== Navigation ===== */
+nav {
+  background-color: #f9fafb; /* lighter background for nav */
+  padding: 10px 6px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+nav a {
+  text-decoration: none;
+  color: #1e3a8a;
+  font-weight: 600;
+  font-size: 0.95em;
+  padding: 8px 6px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+/* ===== Main Section ===== */
+main {
+  padding: 18px 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Fancy Heading ===== */
+.fancy-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8em;
+  background: linear-gradient(90deg, #ff6b6b, #4d96ff, #ffd93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 16px;
+  animation: floatText 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+/* ===== Dynamic Typing Text ===== */
+.typing-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1em;
+  margin: 8px auto 20px;
+  line-height: 1.5;
+  min-height: 120px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.typed-line {
+  opacity: 0;
+  color: #1e3a8a;
+  font-weight: 600;
+  animation: fadeInText 0.4s forwards;
+  margin: 5px 0;
+}
+
+@keyframes fadeInText { to { opacity: 1; } }
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 3px;
+  color: #1e3a8a;
+  animation: blink 1s steps(2, start) infinite;
+  font-weight: 700;
+}
+
+@keyframes blink { 50% { visibility: hidden; } }
+
+/* ===== Horizontal Course Cards ===== */
+.course-container {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  padding: 10px 5px;
+  justify-content: flex-start;
+}
+
+.course-card {
+  flex: 0 0 200px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  scroll-snap-align: center;
+  transition: transform 0.25s ease;
+}
+
+.course-card:active {
+  transform: scale(0.97);
+}
+
+.course-card h3 {
+  font-size: 1em;
+  margin: 8px 0;
+  color: #1e3a8a;
+}
+
+.course-card p {
+  font-size: 0.9em;
+  color: #444;
+}
+
+/* ===== Gallery ===== */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+/* ===== Media Section ===== */
+.media-section img,
+.media-section video {
+  width: 95%;
+  max-width: 420px;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: block;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* ===== Responsive Video Embed ===== */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 16px auto;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* ===== Contact Section ===== */
+.contact-section {
+  background: #e8eeff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.contact-section h2 {
+  color: #1e3a8a;
+  font-size: 1.1em;
+}
+
+.contact-section a {
+  color: #1e3a8a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #1e3a8a;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  margin-top: 25px;
+  font-size: 0.85em;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Balloon Canvas ===== */
+#balloons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Tablet Enhancements ===== */
+@media (min-width: 768px) {
+  header img { width: 90px; }
+  header h1 { font-size: 2.6em; }
+  .typing-text { font-size: 1.2em; }
+  .course-card { flex: 0 0 260px; }
+  .video-container { max-width: 600px; }
+}
+
+/* ===== Small Phones Adjustment ===== */
+@media (max-width: 400px) {
+  header img { width: 65px; margin-right: 8px; }
+  header h1 { font-size: 1.8em; }
+  .course-card { flex: 0 0 180px; }
+  .gallery img { max-width: 90%; }
+}
