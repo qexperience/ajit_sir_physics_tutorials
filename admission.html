@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission - Ajit Sir’s Physics Tutorials</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .tab-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .tab-btn {
+      background-color: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .tab-btn:hover {
+      background-color: #3b82f6;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="Ajit Sir’s Physics Tutorials Logo">
+      <h1>Ajit Sir’s Physics Tutorials</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="admission.html" class="active">Admission</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="text-align: center; padding: 30px;">
+    <h2>Admission Section</h2>
+    <div class="tab-container">
+      <button class="tab-btn" onclick="showEnquiry()">Admission Enquiry</button>
+      <button class="tab-btn" onclick="openFeeReceipt()">Admission Fee Receipt</button>
+    </div>
+  </section>
+
+  <footer style="background-color: #1e3a8a; color: white; text-align: center; padding: 12px; margin-top: 30px;">
+    <p style="margin: 0;">&copy; 2025 Ajit Sir’s Physics Tutorials | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Show enquiry alert
+    function showEnquiry() {
+      alert("Enquiry form coming soon...");
+    }
+
+    // Open external fee receipt web app
+    function openFeeReceipt() {
+      window.open("https://ajit-sir-fee-reciept.onrender.com/", "_blank");
+    }
+  </script>
+</body>
+</html>
