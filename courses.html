@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Ajit Sir’s Physics Tutorials</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <img src="logo.png" alt="Ajit Sir’s Physics Tutorials Logo">
+      <h1>Ajit Sir’s Physics Tutorials</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html"class="active">Courses</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" >Contact</a>
+        <a href="admission.html">Admission</a>
+
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="fancy-heading">Courses Offered</h2>
+
+    <div class="typing-text" id="dynamicText"></div>
+
+    <div class="course-container">
+      <div class="course-card">
+        <h3 class="fancy-course">Class XI Physics (HSC)</h3>
+        <p>Build strong fundamentals and problem-solving skills for Board and NEET/JEE.</p>
+      </div>
+      <div class="course-card">
+        <h3 class="fancy-course">Class XII Physics (HSC)</h3>
+        <p>Complete syllabus coverage with conceptual clarity and numerical mastery.</p>
+      </div>
+      <div class="course-card">
+        <h3 class="fancy-course">Cambridge Grade 8–10</h3>
+        <p>Science & Mathematics with experimental learning and logical reasoning.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Balloons Animation -->
+  <canvas id="balloons"></canvas>
+
+  <footer>
+    <p>&copy; 2025 Ajit Sir’s Physics Tutorials | Powered by Teachmint X Pro AI Panel</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Balloon animation
+    const canvas = document.getElementById('balloons');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#FF6FD8'];
+    const balloons = [];
+
+    class Balloon {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height + Math.random() * 100;
+        this.radius = Math.random() * 15 + 10;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.speed = Math.random() * 1 + 0.5;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.closePath();
+      }
+      update() {
+        this.y -= this.speed;
+        if (this.y < -50) {
+          this.y = canvas.height + Math.random() * 100;
+          this.x = Math.random() * canvas.width;
+        }
+        this.draw();
+      }
+    }
+
+    for (let i = 0; i < 50; i++) balloons.push(new Balloon());
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      balloons.forEach(b => b.update());
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
